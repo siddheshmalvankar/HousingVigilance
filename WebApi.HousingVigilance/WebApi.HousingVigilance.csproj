@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200415142903_HousingVigilanceInitialMigration.cs" />
+    <Compile Remove="Migrations\20200415142903_HousingVigilanceInitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200416051411_HousingVigilanceInitialMigration.cs" />
+    <Compile Remove="Migrations\20200416051411_HousingVigilanceInitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200416051737_HousingVigilanceInitialMigration.cs" />
+    <Compile Remove="Migrations\20200416051737_HousingVigilanceInitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200416051946_HousingVigilanceInitialMigration.cs" />
+    <Compile Remove="Migrations\20200416051946_HousingVigilanceInitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200416054032_HousingVigilanceInitialMigration.cs" />
+    <Compile Remove="Migrations\20200416054032_HousingVigilanceInitialMigration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DBAccess.HousingVigilance\DBAccess.HousingVigilance.csproj" />
+  </ItemGroup>
+
+</Project>

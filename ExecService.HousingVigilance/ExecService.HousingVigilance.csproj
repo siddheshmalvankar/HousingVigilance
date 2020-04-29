@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="CommandHandler\" />
+    <Folder Include="CommandModels\" />
+    <Folder Include="QueryModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DBAccess.HousingVigilance\DBAccess.HousingVigilance.csproj" />
+    <ProjectReference Include="..\Infra.HousingVigilance\Infra.HousingVigilance.csproj" />
+  </ItemGroup>
+
+</Project>
