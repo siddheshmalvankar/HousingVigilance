@@ -15,6 +15,8 @@ namespace DBAccess.HousingVigilance.Domain.Mapping
             //Primary Key
             builder.HasKey(x => x.RoleID);
 
+            builder.Property(u => u.RoleID).ValueGeneratedOnAdd();
+
             //Properties
             builder.Property(x => x.RoleName).IsRequired().HasMaxLength(50).HasColumnName("RoleName");
             builder.Property(x => x.RoleDesc).IsRequired().HasMaxLength(200).HasColumnName("RoleDesc");

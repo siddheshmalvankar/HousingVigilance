@@ -11,7 +11,7 @@ using System.Text;
 
 namespace DBAccess.HousingVigilance.Domain
 {
-    public class UnitofWork<TEntity> : IUnitofWork
+    public class UnitofWork : IUnitofWork
     {
         private bool disposed;
         protected readonly HousingVigilanceContext Context;
@@ -40,6 +40,10 @@ namespace DBAccess.HousingVigilance.Domain
         public IQRRepository QRcodes { get; }
 
         public IUserLoginRepository UserLogins { get; }
+
+        public IAuditLogRepository AuditLogs { get; }
+
+        public IBrowserCapabilityRepository BrowserCapabilities { get; }
 
         public int Complete()
         {

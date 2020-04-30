@@ -15,6 +15,8 @@ namespace DBAccess.HousingVigilance.Domain.Mapping
             //Primary Key
             builder.HasKey(x => x.VehicleID);
 
+            builder.Property(u => u.VehicleID).ValueGeneratedOnAdd();
+
             //Properties
             builder.Property(x => x.VehicleType).IsRequired().HasMaxLength(1).HasColumnName("VehicleType");
             builder.Property(x => x.VehicleNumber).IsRequired().HasMaxLength(50).HasColumnName("VehicleNumber");

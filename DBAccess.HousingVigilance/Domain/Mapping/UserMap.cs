@@ -15,6 +15,7 @@ namespace DBAccess.HousingVigilance.Domain.Mapping
             //Primary Key
             builder.HasKey(x => x.UserID);
 
+            builder.Property(u => u.UserID).ValueGeneratedOnAdd();
             //Properties
             builder.Property(x => x.UserType).IsRequired().HasMaxLength(1).HasColumnName("UserType");
             builder.Property(x => x.FirstName).IsRequired().HasMaxLength(50).HasColumnName("FirstName");

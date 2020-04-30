@@ -22,6 +22,10 @@ namespace DBAccess.HousingVigilance.Domain
         public DbSet<Vehicle> Vehicles { get; set; }
 
         public DbSet<GateEntry> GateEntries { get; set; }
+        public DbSet<UserLogin> UserLogins { get; set; }
+        public DbSet<AuditLog> AuditLogs { get; set; }
+        public DbSet<BrowserCapability> BrowserCapabilitys { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PermissionMap());
@@ -30,6 +34,9 @@ namespace DBAccess.HousingVigilance.Domain
             modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new VehicleMap());
             modelBuilder.ApplyConfiguration(new GateEntryMap());
+            modelBuilder.ApplyConfiguration(new UserLoginMap());
+            modelBuilder.ApplyConfiguration(new AuditLogMap());
+            modelBuilder.ApplyConfiguration(new BrowserCapabilityMap());
             modelBuilder.Seed();
         }
     }

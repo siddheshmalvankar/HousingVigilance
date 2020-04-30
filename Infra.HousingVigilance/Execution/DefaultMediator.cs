@@ -12,11 +12,11 @@ namespace Infra.HousingVigilance.Execution
     public class DefaultMediator : IMediator
     {
         private readonly ILog _log;
-        private readonly IResolver _resolver;
+       // private readonly IResolver _resolver;
 
-        public DefaultMediator(IResolver resolver, ILog log)
+        public DefaultMediator(ILog log)
         {
-            _resolver = resolver;
+           // _resolver = resolver;
             _log = log;
         }
 
@@ -24,7 +24,9 @@ namespace Infra.HousingVigilance.Execution
         {
             var handlerType = typeof(IQueryHandler<,>).MakeGenericType(request.GetType(), typeof(TResponse));
             var wrapperType = typeof(QueryHandler<,>).MakeGenericType(request.GetType(), typeof(TResponse));
-            var handler = _resolver.GetInstance(handlerType);
+           
+
+            var handler = ServiceLocator.Current.GetInstance(handlerType);// _resolver.GetInstance(handlerType);
 
             if (handler == null)
             {
@@ -40,7 +42,7 @@ namespace Infra.HousingVigilance.Execution
         {
             var handlerType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
             var wrapperType = typeof(NoResultCommandHandler<>).MakeGenericType(command.GetType());
-            var handler = _resolver.GetInstance(handlerType);
+            var handler = ServiceLocator.Current.GetInstance(handlerType);// _resolver.GetInstance(handlerType);
 
             if (handler == null)
             {
@@ -64,7 +66,7 @@ namespace Infra.HousingVigilance.Execution
         {
             var handlerType = typeof(ICommandHandler<,>).MakeGenericType(command.GetType(), typeof(TResult));
             var wrapperType = typeof(CommandHandler<,>).MakeGenericType(command.GetType(), typeof(TResult));
-            var handler = _resolver.GetInstance(handlerType);
+            var handler = ServiceLocator.Current.GetInstance(handlerType);// _resolver.GetInstance(handlerType);
 
             if (handler == null)
             {

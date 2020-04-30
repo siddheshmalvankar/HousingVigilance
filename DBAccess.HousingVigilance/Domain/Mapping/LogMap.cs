@@ -15,6 +15,8 @@ namespace DBAccess.HousingVigilance.Domain.Mapping
             // Primary Key
             builder.HasKey(t => t.LogID);
 
+            builder.Property(u => u.LogID).ValueGeneratedOnAdd();
+
             // Properties
             builder.Property(t => t.Severity)
                 .IsRequired()

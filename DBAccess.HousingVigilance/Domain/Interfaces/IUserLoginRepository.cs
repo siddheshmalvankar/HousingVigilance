@@ -6,6 +6,6 @@ namespace DBAccess.HousingVigilance.Domain.Interfaces
 {
     public interface IUserLoginRepository:IRepository<UserLogin>
     {
-       
+        UserLogin GetUserLoginByName(string userName);
     }
 }

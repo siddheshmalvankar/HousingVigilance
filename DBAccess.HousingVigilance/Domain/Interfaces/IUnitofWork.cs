@@ -16,7 +16,11 @@ namespace DBAccess.HousingVigilance.Domain.Interfaces
         IQRRepository QRcodes { get; }
         IUserLoginRepository UserLogins { get; }
 
-    
+        IAuditLogRepository AuditLogs { get; }
+
+        IBrowserCapabilityRepository BrowserCapabilities { get; }
+
+
         IEnumerable<object> ExecuteReader(string sqlQuery);
 
         IEnumerable<object> ExecuteReader(string storedProcedureName, SqlParameter[] parameters =null);

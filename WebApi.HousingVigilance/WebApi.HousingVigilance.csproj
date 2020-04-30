@@ -28,6 +28,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DBAccess.HousingVigilance\DBAccess.HousingVigilance.csproj" />
+    <ProjectReference Include="..\ExecService.HousingVigilance\ExecService.HousingVigilance.csproj" />
+    <ProjectReference Include="..\Infra.HousingVigilance\Infra.HousingVigilance.csproj" />
   </ItemGroup>
 
 </Project>

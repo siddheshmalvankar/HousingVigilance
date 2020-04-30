@@ -11,5 +11,6 @@ namespace DBAccess.HousingVigilance.Domain
         public int UserLoginID { get; set; }
         public string UserName { get; set; }
         public string PasswordHash { get; set; }
+        public virtual User User { get; set; }
     }
 }

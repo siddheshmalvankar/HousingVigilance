@@ -31,6 +31,9 @@ namespace DBAccess.HousingVigilance.Domain
         public int RoleID { get; set; }
         public virtual Role Role { get; set; }
 
+        public int UserLoginID { get; set; }
+        public virtual UserLogin UserLogin { get; set; }
+
 
         public virtual ICollection<GateEntry> GetEntries { get; set; }
 

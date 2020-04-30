@@ -14,7 +14,9 @@ namespace DBAccess.HousingVigilance.Domain.Mapping
         public void Configure(EntityTypeBuilder<QR> builder)
         {
             //Primary Key
-            builder.HasKey(x => x.QrID);               
+            builder.HasKey(x => x.QrID);
+
+            builder.Property(u => u.QrID).ValueGeneratedOnAdd();
 
             //Properties          
             builder.Property(x => x.QrUniqueId).IsRequired().HasMaxLength(50).HasColumnName("QrUniqueId");

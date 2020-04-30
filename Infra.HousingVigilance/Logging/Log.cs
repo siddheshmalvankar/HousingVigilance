@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace Infra.HousingVigilance.Logging
 {
-    public class Log : ILog
+    public class ApplicationLog : ILog
     {
         private static bool _isInitialized;
-        public Log()
+        public ApplicationLog()
         {
             //Intialize the log configuration
             if (!_isInitialized)
             {
                 var config = ConfigurationSourceFactory.Create();
-                var logWriterFactory = new LogWriterFactory(config);
-                Logger.SetLogWriter(logWriterFactory.Create());
+              //  var logWriterFactory = new LogWriterFactory(config);
+              //  Logger.SetLogWriter(logWriterFactory.Create());
                 _isInitialized = true;
             }
         }

@@ -238,14 +238,14 @@ namespace Infra.HousingVigilance.Helpers
             _iterCount = 10000;
         }
 
-        public virtual byte[] HashPassword(string password)
+        public virtual string HashPassword(string password)
         {
             if (password == null)
             {
                 throw new ArgumentNullException("password");
             }
 
-            return HashPasswordV3(password, _rng);
+            return Convert.ToBase64String( HashPasswordV3(password, _rng));
         }
 
         /// <summary>
@@ -289,30 +289,7 @@ namespace Infra.HousingVigilance.Helpers
             }
         }
 
-        public string GenerateRandomPassword(int length)
-        {
-            int intZero = '0';
-            int intNine = '9';
-            int intA = 'A';
-            int intO = 'O';
-            int intZ = 'Z';
-            int intCount = 0;
-            int intRandomNumber = 0;
-            string strCaptchaString = "";
-
-            Random random = new Random(System.DateTime.Now.Millisecond);
-
-            while (intCount < length)
-            {
-                intRandomNumber = random.Next(intZero, intZ);
-                if (((intRandomNumber > intZero) && (intRandomNumber <= intNine) || (intRandomNumber >= intA) && (intRandomNumber < intO) || (intRandomNumber > intO) && (intRandomNumber <= intZ)))
-                {
-                    strCaptchaString = strCaptchaString + (char)intRandomNumber;
-                    intCount = intCount + 1;
-                }
-            }
-            return strCaptchaString;
-        }
+        
 
         // Compares two byte arrays for equality. The method is specifically written so that the loop is not optimized.
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]

@@ -15,6 +15,8 @@ namespace DBAccess.HousingVigilance.Domain.Mapping
             //Primary Key
             builder.HasKey(x => x.UserLoginID);
             builder.HasAlternateKey(x => x.UserName);
+
+            builder.Property(u => u.UserLoginID).ValueGeneratedOnAdd();
             //Properties          
             builder.Property(r => r.RowVersion).HasColumnName("RowVersion").IsRowVersion();
             builder.Property(r => r.UserName).IsRequired().HasColumnName("UserName").HasMaxLength(50);
